@@ -1,22 +1,28 @@
 {
-    "INTERVAL_MS": 5000,
-    "CAPTURE_DIRECTORY": "./captures",
-    "CAPTURE_HOSTS": [
-        {
-            "URL": "http://192.168.1.200/capture",
-            "NAME": "0"
-        },
-        {
-            "URL": "http://192.168.1.201/capture",
-            "NAME": "1"
-        },
-        {
-            "URL": "http://192.168.1.202/capture",
-            "NAME": "2"
-        },
-        {
-            "URL": "http://192.168.1.203/capture",
-            "NAME": "3"
-        }
-    ]
+    "CAPTURE": {
+        "INTERVAL_MS": 5000,
+        "CAPTURE_DIRECTORY": "./captures",
+        "CAPTURE_HOSTS": [
+            {
+                "URL": "http://192.168.1.200/capture",
+                "NAME": "0"
+            },
+            {
+                "URL": "http://192.168.1.201/capture",
+                "NAME": "1"
+            },
+            {
+                "URL": "http://192.168.1.202/capture",
+                "NAME": "2"
+            },
+            {
+                "URL": "http://192.168.1.203/capture",
+                "NAME": "3"
+            }
+        ]
+    },
+    "DELETE": {
+        "DELETE_MS": 9999999999999999,
+        "INTERVAL_MS": 9999999999999999
+    }
 }
