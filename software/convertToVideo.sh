@@ -4,7 +4,7 @@
 IMAGE_DIR="./manual_captures"
 
 # Output video filename
-OUTPUT_VIDEO="./output.mp4"
+OUTPUT_VIDEO="../output.mp4"
 
 # Frame rate for the video
 FRAME_RATE=30
@@ -25,6 +25,6 @@ fi
 cd "$IMAGE_DIR" || exit
 
 # Run FFmpeg to convert images to video
-ffmpeg -framerate "$FRAME_RATE" -pattern_type glob -i 'frame_*.jpg' -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p "./$OUTPUT_VIDEO"
+ffmpeg -framerate "$FRAME_RATE" -pattern_type glob -i 'frame_*.jpg' -c:v libx265 -preset slow -crf 28 -pix_fmt yuv420p "./$OUTPUT_VIDEO"
 
 echo "Video has been created: $OUTPUT_VIDEO"
