@@ -52,6 +52,20 @@ esp_err_t get_stream_handler(httpd_req_t *req)
     }
     return ESP_OK;
 }
+esp_err_t get_capture_handler(httpd_req_t *req)
+{
+    camera_fb_t *pic = esp_camera_fb_get();
+    if (!pic) {
+        ESP_LOGE(TAG, "Failed to get camera frame buffer");
+        // Failed to get the camera frame buffer
+        httpd_resp_send_500(req);
+        return ESP_FAIL;
+    }
+    httpd_resp_set_type(req, "image/jpeg");
+    httpd_resp_send(req, (const char *)pic->buf, pic->len);
+    esp_camera_fb_return(pic);
+    return ESP_OK;
+}
 
 httpd_uri_t uri_get_stream = {
     .uri      = "/stream",
@@ -63,7 +77,7 @@ httpd_uri_t uri_get_stream = {
 httpd_uri_t uri_get_capture = {
     .uri      = "/capture",
     .method   = HTTP_GET,
-    .handler  = get_stream_handler,
+    .handler  = get_capture_handler,
     .user_ctx = NULL
 };
 
