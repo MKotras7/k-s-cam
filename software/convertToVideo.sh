@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing the images
-IMAGE_DIR="./"
+IMAGE_DIR="./manual_captures"
 
 # Output video filename
 OUTPUT_VIDEO="./output.mp4"
