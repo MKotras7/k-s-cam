@@ -6,6 +6,8 @@
         "esp_log.h": "c",
         "freertos.h": "c",
         "task.h": "c",
-        "esp_err.h": "c"
+        "esp_err.h": "c",
+        "camera.h": "c",
+        "esp_camera.h": "c"
     }
 }
